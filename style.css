@@ -1,0 +1,299 @@
+/*cleland's code for switching font*/
+.blue-font {
+  color: blue;
+}
+
+.green-font {
+  color: green;
+}
+/**default**/
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/**fonts**/
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+@font-face {
+    font-family: 'circular';
+    src: url('fonts/circular.woff2') format('woff2'),
+         url('fonts/circular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'din';
+    src: url('fonts/din.woff2') format('woff2'),
+         url('fonts/din.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/**hyperlinks**/
+a:link {
+  color: #60a4e0;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #a68fb6;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #e4e87d;
+  background-color: transparent;
+  text-decoration: underline;
+  background-size: 4px 50px;
+}
+a:active {
+  color: #401c6b;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/**scroll bar***/
+::-webkit-Scrollbar{
+    width: 5px; 
+	background: rgb(44, 4, 56);
+}
+::-webkit-Scrollbar-thumb{
+	border-radius: 10px;
+	background: #189363;
+	box-shadow: inset 0 0 20px #083b28;
+}
+::-webkit-Scrollbar-track{
+	margin-top: 20px;
+	border-radius: 10px;
+}
+html {
+  scroll-behavior: smooth
+}
+
+
+/*sidebar*/
+.sidebar{
+  position: fixed;
+  width: 350px;
+  left: -350px;
+  height: 100%;
+  background: #c8a27c;
+  transition: all .5s ease;
+  overflow-y: scroll;
+}
+.sidebar header{
+  font-size: 23px;
+  color: #974928;
+  line-height: 70px;
+  text-align: center;
+  background: #b3833c;
+  user-select: none;
+  font-family: 'Circular', sans-serif;
+}
+.sidebar a{
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: #f7efd4;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 5px solid transparent;
+  font-family: 'Din', sans-serif;
+  transition: all .5s ease;
+}
+a.active,a:hover{
+  border-left: 5px solid #6e2a0c;
+  color: #6e2a0c;
+}
+.sidebar a i{
+  font-size: 23px;
+  margin-right: 16px;
+}
+.sidebar a span{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#box73{
+  display: none;
+}
+label #menu-button,label #menu-cancel{
+  position: fixed;
+  cursor: pointer;
+  color: #f7efd4;
+  border-radius: 5px;
+  border: 1px solid #262626;
+  margin: 15px 30px;
+  font-size: 29px;
+  background: #262626;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+}
+label #menu-cancel{
+  opacity: 0;
+  visibility: hidden;
+}
+#box73:checked ~ .sidebar{
+  left: 0;
+}
+#box73:checked ~ label #menu-button{
+  margin-left: 355px;
+  opacity: 0;
+  visibility: hidden;
+}
+#box73:checked ~ label #menu-cancel{
+  margin-left: 355px;
+  opacity: 1;
+  visibility: visible;
+}
+#box73:checked ~ body{
+  margin-left: 250px;
+}
+@media(max-width : 860px){
+  .sidebar{
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin: 100px 0;
+  }
+  header,#menu-button,#menu-cancel{
+    display: none;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a{
+    height: 60px;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+  }
+  a:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar a:hover span{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/*hr*/
+hr { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #52381e; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+} 
+hr:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #52381e; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+hr.style1 {
+	border-top: 1px dotted #52381e;
+	border-bottom: 1px dotted #52381e;
+}
+  
+  
+
+/*background*/
+body{
+  background-color: #dfb78c;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: all 0.5s;
+}
+
+
+/*quang test site*/
+.quangh0 {
+  font-family: 'Circular';
+  font-size: 80px;
+  color: #52381e;
+  font-weight: 500;
+  margin: 2px 0px 0px 0px;
+  padding: 0;
+  vertical-align: baseline;
+  text-align: center;
+}
+.cs695 {
+  font-family: 'Circular';
+  font-size: 80px;
+  color: #6e2a0c;
+  font-weight: 500;
+  margin: 2px 0px 0px 0px;
+  padding: 0;
+  vertical-align: baseline;
+  text-align: center;
+}
+.quangh1 {
+  font-family: 'Circular';
+  font-size: 65px;
+  color: #2d1c0f;
+  font-weight: 500;
+  margin: 2px 0px 0px 0px;
+  padding: 0;
+  vertical-align: baseline;
+  text-align: center;
+}
+.quangh2 {
+  font-family: 'Circular';
+  font-size: 43px;
+  color: #170c07;
+  font-weight: 500;
+  margin: 2px 0px 0px 0px;
+  padding: 0;
+  vertical-align: baseline;
+  text-align: center;
+}
+.quangh3 {
+  font-family: 'Din';
+  font-size: 25px;
+  color: rgb(46, 46, 46);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.cs888 {
+  font-family: 'Din';
+  font-size: 25px;
+  color: #800000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.quangp {
+  font-family: 'Din';
+  font-size: 18px;
+  color: #040404;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  word-wrap: break-word;
+  width: 800px;
+}
+
+/**image border**/
+img{
+  border: 3px solid #6e2a0c;
+}
